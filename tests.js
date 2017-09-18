@@ -9,11 +9,10 @@
 // - isEven
 // - isOdd
 
-
 const randomPositiveNumber = Math.ceil(Math.random() * 100);
 const randomNegativeNumber = Math.ceil(Math.random() * 100) * -1;
 const exampleObject = { "firstName": "Grace", "lastName": "Hopper"};
-const exampleArray = ['Grace Hopper', 'Ada Lovelace', 'Margaret Hamilton'];
+const exampleArray = ['Grace Hopper', 'Ada Lovelace', 'Margaret Hamilton', 'Sandi Metz'];
 const exampleString = "David Bowie";
 
 describe("isBoolean", function() {
@@ -22,7 +21,6 @@ describe("isBoolean", function() {
     });
     it('should return a boolean value', function() {
        expect(typeof isBoolean(true)).toBe('boolean');
-       expect(typeof isBoolean(false)).toBe('boolean');
        expect(typeof isBoolean("Bob")).toBe('boolean');
     });
     it('should return true when passed the boolean true, because true is a boolean value.', function() {
@@ -30,6 +28,12 @@ describe("isBoolean", function() {
     });
     it('should return true when passed the boolean false, because false is a boolean value.', function() {
         expect(isBoolean(false)).toBe(true)
+    });
+    it('should return false when passed the number ' + randomPositiveNumber, function() {
+       expect(isBoolean(randomPositiveNumber)).toBe(false);
+    });
+    it('should return false when passed the number 0', function() {
+        expect(isBoolean(0)).toBe(false);
     });
     it('should return false when passed no inputs (undefined) ', function() {
         expect(isBoolean()).toBe(false);
@@ -74,8 +78,8 @@ describe('isNumeric', function() {
     it('should return false when passed the non-numeric string "Grace Hopper', function() {
         expect(isNumeric("Grace Hopper")).toBe(false);
     });
-    it('should return false when passed no input as an argument', function() {
-        expect(isNumeric()).toBe(false);
+    it('should return false when passed null as the input', function() {
+        expect(isNumeric(null)).toBe(false);
     });
     it('should return false when passed an array', function() {
         expect(isNumeric(exampleArray)).toBe(false);
@@ -205,3 +209,43 @@ describe('isString', function() {
     });
 });
 
+describe('isEven', function() {
+    it('isEven should be a defined function', function() {
+        expect(typeof isEven).toBe('function');
+    });
+    it('should return a boolean', function () {
+        expect(typeof isEven(3)).toBe('boolean');
+        expect(typeof isEven(2)).toBe('boolean');
+    });
+    it('should return true for 2', function() {
+        expect(isEven(2)).toBe(true);
+    });
+    it('should return true for 10', function() {
+        expect(isEven(10)).toBe(true);
+    });
+    it('should return false for 5', function() {
+        expect(isEven(5)).toBe(false);
+    });
+    it('should return false for 3', function() {
+        expect(isEven(3)).toBe(false);
+    });
+    it('should return false for an array', function() {
+        expect(isEven(exampleArray)).toBe(false);
+    });
+    it('should return false when provided a non-numeric string', function() {
+        expect(isEven())
+    });
+    it('should return false when the provided input is an object', function() {
+
+    });
+    it('should return false when passed null as the input', function() {
+
+    });
+    it('should return false when called without providing an input', function() {
+
+    });
+});
+
+describe('isOdd', function() {
+
+});

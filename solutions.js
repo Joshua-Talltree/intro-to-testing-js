@@ -8,22 +8,6 @@
  * here. If you do, the automated tests will not be able to see your functions.
  */
 
-const isNegative = function(input) {
-    return input < 0;
-};
-
-const isPositive = function(input) {
-    return input > 0;
-};
-
-const isBoolean = function(input) {
+function isBoolean(input) {
     return typeof input == 'boolean';
-};
-
-const isNumeric = function(input) {
-    return !isNaN(parseFloat(input));
-};
-
-const isString = function(input) {
-    return typeof input == 'string';
-};
+}
