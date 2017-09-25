@@ -460,19 +460,34 @@ describe('sumOfSquares', function() {
     it('should return a number when passed two numbers', function() {
         expect(typeof (sumOfSquares(1, 2))).toBe('number');
     });
+    it('should return 8 when passed 2 and 2', function() {
+        expect(sumOfSquares(2, 2)).toBe(8);
+    });
+    it('should return 2 when passed 1 and 1', function() {
+        expect(sumOfSquares(1, 1)).toBe(2);
+    });
+    it('should return 0 when passed 0 and 0', function() {
+        expect(sumOfSquares(0,0)).toBe(0);
+    });
+    it('should return 13 when passed 2 and 3', function() {
+        expect(sumOfSquares(2, 3)).toBe(13);
+    });
+    it('should return ' + (randomPositiveNumber * randomPositiveNumber + randomNegativeNumber * randomNegativeNumber) + ' when passed ' + randomNegativeNumber + ' and ' + randomNegativeNumber, function() {
+       expect(sumOfSquares(randomPositiveNumber, randomNegativeNumber)).toBe(randomPositiveNumber*randomPositiveNumber + randomNegativeNumber * randomNegativeNumber);
+    });
     it('should return false when passed a non-numeric string', function() {
-
+        expect(sumOfSquares("Bob")).toBe(false);
     });
     it('should return false when passed a boolean', function() {
-
+        expect(sumOfSquares(true)).toBe(false);
     });
     it('should return false when passed an array', function() {
-
+        expect(sumOfSquares(exampleArray)).toBe(false);
     });
     it('should return false when passed an object', function() {
-
+        expect(sumOfSquares(exampleObject)).toBe(false);
     });
     it('should return false when called with no arguments', function() {
-
+        expect(sumOfSquares()).toBe(false);
     });
 });
