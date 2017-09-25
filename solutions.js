@@ -7,7 +7,3 @@
  * immediately invoked function expression (iife), you should _not_ do that
  * here. If you do, the automated tests will not be able to see your functions.
  */
-
-function isBoolean(input) {
-    return typeof input == 'boolean';
-}
