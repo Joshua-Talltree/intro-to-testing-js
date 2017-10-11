@@ -113,7 +113,7 @@
         square(2)                   // 4
         square(3)                   // 9
         square(-4)                  // 16
-        square(0.5)                 // 0.25
+        square(0.5)                 // .25
         square("Bob")               // false
 
 10. Write a function named `add` that takes in two inputs. If both inputs provided are numeric, `add` will return the sum of both inputs. If one or both inputs is not numeric, `add` should return false.
