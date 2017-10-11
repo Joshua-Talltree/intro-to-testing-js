@@ -1,18 +1,21 @@
 "use strict";
 
-// - isBoolean
-// - isNumeric (string number or number)
-// - isNegative
-// - isPositive
-// - isString
-// - isArray
-// - isEven
-// - isOdd
-// - increment(number) should return false if input aint a number
-// - decrement(number) should return false if input aint a number
-// - square(n)
-// - add(a, b)
-// - sumOfSquares(a, b)
+/** 
+ * Tests for the following functions 
+ *   isBoolean
+ *   isNumeric (string number or number)
+ *   isNegative
+ *   isPositive
+ *   isString
+ *   isArray
+ *   isEven
+ *   isOdd
+ *   increment(number) should return false if input aint a number
+ *   decrement(number) should return false if input aint a number
+ *   square(n)
+ *   add(a, b)
+ *   sumOfSquares(a, b)
+ */
 
 const randomPositiveNumber = Math.ceil(Math.random() * 100);
 const randomNegativeNumber = Math.ceil(Math.random() * 100) * -1;
@@ -159,7 +162,7 @@ describe('isPositive', function() {
        expect(isPositive(0)).toBe(false);
     });
     it('should return false for ' + randomNegativeNumber, function() {
-       expect(isPositive(randomNegativeNumber)).ToBe(false);
+       expect(isPositive(randomNegativeNumber)).toBe(false);
     });
     it('returns false for non-number strings such as "Grace Hopper"', function() {
         expect(isPositive("Grace Hopper")).toBe(false);
