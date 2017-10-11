@@ -366,7 +366,6 @@ describe('decrement', function() {
     it('should return false when called with no arguments', function() {
         expect(decrement()).toBe(false);
     });
-
 });
 
 describe('square', function() {
@@ -437,7 +436,7 @@ describe('add', function() {
         expect(add(null)).toBe(false);
     });
     it('should return false when passed non-numeric strings', function() {
-        expect(add("Bob", "Jane").toBe(false);
+        expect(add("Bob", "Jane")).toBe(false);
     });
     it('should return false when passed a boolean', function() {
         expect(add(true)).toBe(false);
