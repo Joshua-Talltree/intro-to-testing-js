@@ -39,6 +39,7 @@
         isBoolean(false)            // true
         isBoolean(0)                // false
         isBoolean(null)             // false
+        isBoolean("")               // false
         isBoolean("Bob")            // false
         isBoolean([1, 2])           // false
 
@@ -47,6 +48,7 @@
         isNumeric(23)               // true
         isNumeric("42")             // true
         isNumeric(3.141)            // true
+        isNumeric("")               // false
         isNumeric(true)             // false
         isNumeric("Bob")            // false
         isNumeric([1,2,3])          // false
@@ -116,6 +118,46 @@
         square(0.5)                 // .25
         square("Bob")               // false
 
+
+1. Write a function named `upperCase` that takes in a single input. If the input is not a string, return `false`. If the input is a non-numeric string, then return it with all the letters capitalized. 
+        
+        upperCase("Codeup")         // "CODEUP"
+        upperCase("javascript")     // "JAVASCRIPT"
+        uppercase("45")             // false
+        upperCase(23)               // false
+        upperCase(null)             // false
+        upperCase([1, 2, 3])        // false
+        upperCase()                 // false
+
+
+1. Write a function named `isPalindrome` that takes in a single input. If the input is not a string, then return `false`. If the input is a string, then return true if the string is the same forwards as it is backwards. Return false if the string is different forwards from backwards. Ignore capitalization.
+        
+        isPalindrome("Bob")         // true
+        isPalindrome("radar")       // true
+        isPalindrome("ufotofu")     // true
+        isPalindrome("Monday")      // false
+        isPalindrome(232)           // false
+        isPalindrome(null)          // false
+
+
+1. Write a function named `getHighestNumber` that takes in 3 arguments. If all 3 inputs are numbers or numeric strings, then return the highest number. If any of the 3 inputs is missing or non-numeric, then return `false`.
+
+        getHighestNumber(1, 2, 3)       // 3
+        getHighestNumber(0, 1, "2")     // 2
+        getHighestNumber(9, 3, -20)     // 9
+        getHighestNumber(1, 2, 'x')     // false
+        getHighestNumber(true, false)   // false
+        getHighestNumber(undefined)     // false
+
+1. Write a function named `containsVowel` that takes in a single input as its argument. If the argument is not a string, then return `false`. If the argument is a string, then return true if the string contains any of the vowels 'a', 'e', 'i', 'o', or 'u' either uppercased or lowercased. Ignore 'y'. If the string does not contain any of these vowels, then return `false`. 
+    
+        containsVowel("Index")      // true
+        containsVowel("Codeup")     // true
+        containsVowel("Jane")       // true
+        containsVowel("bb8")        // false
+        containsVowel("")           // false
+        containsVowel(34)           // false
+
 10. Write a function named `add` that takes in two inputs. If both inputs provided are numeric, `add` will return the sum of both inputs. If one or both inputs is not numeric, `add` should return false.
         
         add(1, 2)                   // 3
@@ -124,6 +166,7 @@
         add(5, true)                // false
         add(true, false)            // false
         add("Monday", "Tuesday")    // false
+        add(null)                   // false
 
 
 11. Write a function named `multiply` that takes in two inputs. If both inputs provided are numeric, `multiply` returns the product of the first input multiplied by the second. If either or both inputs are not numeric, `multiply` should return false.
@@ -135,7 +178,7 @@
         multiply(true, false)       // false
         multiply("Monday")          // false
 
-12. Write a function named `sumOfSquares` that takes in two inputs. If both inputs are numeric, `sumOfSquares` should square each input and return the sum. If either or both inputs are not numeric, `sumOfSquares` should return false.
+12. Write a function named `sumOfSquares` that takes in two inputs. If both inputs are numeric, `sumOfSquares` should square each input and return the sum of them added together. For example, if we pass `a` and `b` then we should square `a` and add it to the square of `b`. If either or both inputs are not numeric, `sumOfSquares` should return false.
 
         sumOfSquares(2, 3)          // 13
         sumOfSquares(1, 0)          // 1

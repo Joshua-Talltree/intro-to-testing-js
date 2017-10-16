@@ -416,6 +416,23 @@ describe('square', function() {
     });
 });
 
+describe('upperCase', function() {
+
+});
+
+describe('isPalindrome', function() {
+
+});
+
+describe('getHighestNumber', function() {
+
+});
+
+describe('containsVowel', function() {
+
+});
+
+
 describe('add', function() {
     it('should be a defined function', function() {
         expect(typeof add).toBe('function');
