@@ -20,11 +20,12 @@
  * containsVowel(input)
  */
 
+const randomBoolean = Boolean(Math.round(Math.random()));
 const randomPositiveNumber = Math.ceil(Math.random() * 100);
 const randomNegativeNumber = Math.ceil(Math.random() * 100) * -1;
 const exampleObject = { "firstName": "Grace", "lastName": "Hopper"};
 const exampleArray = ['Grace Hopper', 'Ada Lovelace', 'Margaret Hamilton', 'Sandi Metz'];
-const exampleString = "David Bowie";
+const exampleString = "Grace Hopper";
 
 describe("isBoolean", function() {
     it('should be a defined function', function() {
@@ -39,6 +40,9 @@ describe("isBoolean", function() {
     });
     it('should return true when passed the boolean false, because false is a boolean value.', function() {
         expect(isBoolean(false)).toBe(true)
+    });
+    it('shound return true when passed the boolean ' + randomBoolean, function() {
+       expect(isBoolean(randomBoolean)).toBe(true);
     });
     it('should return false when passed the number ' + randomPositiveNumber, function() {
        expect(isBoolean(randomPositiveNumber)).toBe(false);
@@ -86,8 +90,11 @@ describe('isNumeric', function() {
     it('should return true when passed a numeric string like "123" as input', function() {
         expect(isNumeric("123")).toBe(true);
     });
+    it('should return false when passed the boolean ' + randomBoolean, function() {
+       expect(isNumeric(randomBoolean)).toBe(false);
+    });
     it('should return false when passed the non-numeric string "Grace Hopper', function() {
-        expect(isNumeric("Grace Hopper")).toBe(false);
+        expect(isNumeric(exampleString)).toBe(false);
     });
     it('should return false when passed null as the input', function() {
         expect(isNumeric(null)).toBe(false);
@@ -129,12 +136,11 @@ describe('isNegative', function() {
     it('returns true for ' + randomNegativeNumber, function() {
         expect(isNegative(randomNegativeNumber)).toBe(true);
     });
-    it('returns false for ' + randomPositiveNumber , function() {
-        expect(isNegative(randomPositiveNumber)).toBe(false);
-    });
-
     it('returns true for the string number "-4".', function() {
         expect(isNegative("-4")).toBe(true);
+    });
+    it('returns false for ' + randomPositiveNumber , function() {
+        expect(isNegative(randomPositiveNumber)).toBe(false);
     });
     it('returns false for the string number "23".', function() {
         expect(isNegative(23)).toBe(false);
@@ -144,6 +150,12 @@ describe('isNegative', function() {
     });
     it('returns false when no argument is provided as input to the function', function() {
         expect(isNegative()).toBe(false);
+    });
+    it('should return false when passed an array', function() {
+       expect(isNegative(exampleArray)).toBe(false);
+    });
+    it('should return false when passed the boolean ' + randomBoolean, function() {
+       expect(isNegative(randomBoolean)).toBe(false);
     });
 });
 
@@ -160,6 +172,9 @@ describe('isPositive', function() {
     });
     it('should return true for ' + randomPositiveNumber, function() {
         expect(isPositive(randomPositiveNumber)).toBe(true);
+    });
+    it('shound return true for the numeric string "12".', function() {
+       expect(isPositive("12")).toBe(true);
     });
     it('should return false for 0', function() {
        expect(isPositive(0)).toBe(false);
@@ -181,6 +196,12 @@ describe('isPositive', function() {
     });
     it('returns false when passed null', function() {
         expect(isPositive(null)).toBe(false);
+    });
+    it('returns false when a passed true', function() {
+       expect(isPositive(true)).toBe(false);
+    });
+    it('returns false when passed the boolean value ' + randomBoolean, function() {
+       expect(isPositive(false)).toBe(false);
     });
 });
 
@@ -220,6 +241,40 @@ describe('isString', function() {
     });
 });
 
+describe('isArray', function() {
+    it('should be a defined function', function() {
+        expect(typeof isArray).toBe('function');
+    });
+    it('should return a boolean value', function() {
+        expect(typeof isArray([1, 2, 3])).toBe('boolean');
+        expect(typeof isArray(1)).toBe('boolean');
+    });
+    it('should return true when passed the array [1, 2, 3]', function() {
+        expect(isArray([1, 2, 3])).toBe(true);
+    });
+    it('should return true when passed an array of strings', function() {
+        expect(isArray(exampleArray)).toBe(true);
+    });
+    it('should return false when passed an object', function() {
+        expect(isArray(exampleObject)).toBe(false);
+    });
+    it('should return false when passed a string', function() {
+        expect(isArray(exampleString)).toBe(false);
+    });
+    it('should return false when passed a boolean', function() {
+        expect(isArray(randomBoolean)).toBe(false);
+    });
+    it('should return false when passed null', function() {
+        expect(isArray(null)).toBe(false);
+    });
+    it('should return false when passed a number', function() {
+        expect(isArray(randomPositiveNumber)).toBe(false);
+    });
+    it('should return false when called with no inputs', function() {
+        expect(isArray()).toBe(false);
+    });
+});
+
 describe('increment', function() {
     it('should be a defined function', function() {
         expect(typeof increment).toBe('function');
@@ -243,7 +298,7 @@ describe('increment', function() {
         expect(increment(exampleString)).toBe(false);
     });
     it('should return false when passed a boolean', function() {
-        expect(increment(false)).toBe(false);
+        expect(increment(randomBoolean)).toBe(false);
     });
     it('should return false when passed an array', function() {
         expect(increment(exampleArray)).toBe(false);
@@ -279,7 +334,7 @@ describe('decrement', function() {
         expect(decrement(exampleString)).toBe(false);
     });
     it('should return false when passed a boolean', function() {
-        expect(decrement(false)).toBe(false);
+        expect(decrement(randomBoolean)).toBe(false);
     });
     it('should return false when passed an array', function() {
         expect(decrement(exampleArray)).toBe(false);
@@ -427,7 +482,10 @@ describe('getHighestNumber', function() {
     });
     it('should return false when passed a single input made of an array', function() {
         expect(getHighestNumber(exampleArray)).toBe(false);
-    })
+    });
+    it('should return false when passed the boolean ' + randomBoolean, function() {
+       expect(getHighestNumber(randomBoolean)).toBe(false);
+    });
 });
 
 describe('containsVowel', function() {
@@ -487,8 +545,14 @@ describe('add', function() {
     it('should return false when passed non-numeric strings', function() {
         expect(add("Bob", "Jane")).toBe(false);
     });
-    it('should return false when passed a boolean', function() {
-        expect(add(true)).toBe(false);
+    it('should return false when passed two true boolean arguments', function() {
+        expect(add(true, true)).toBe(false);
+    });
+    it('should return false when passed two false boolean arguments', function() {
+        expect(add(false, false)).toBe(false);
+    });
+    it('should return false when passed a true and a false argument', function() {
+       expect(add(true, false)).toBe(false);
     });
     it('should return false when passed an array', function() {
         expect(add(exampleArray)).toBe(false);
@@ -526,8 +590,11 @@ describe('sumOfSquares', function() {
     it('should return false when passed a non-numeric string', function() {
         expect(sumOfSquares("Bob")).toBe(false);
     });
-    it('should return false when passed a boolean', function() {
-        expect(sumOfSquares(true)).toBe(false);
+    it('should return false when passed two true arguments', function() {
+        expect(sumOfSquares(true, true)).toBe(false);
+    });
+    it('should return false when passed two false arguments', function() {
+        expect(sumOfSquares(false, false)).toBe(false);
     });
     it('should return false when passed an array', function() {
         expect(sumOfSquares(exampleArray)).toBe(false);
