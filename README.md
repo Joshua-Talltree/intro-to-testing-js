@@ -119,7 +119,7 @@
         square("Bob")               // false
 
 
-1. Write a function named `upperCase` that takes in a single input. If the input is not a string, return `false`. If the input is a non-numeric string, then return it with all the letters capitalized. 
+10. Write a function named `upperCase` that takes in a single input. If the input is not a string, return `false`. If the input is a non-numeric string, then return it with all the letters capitalized. 
         
         upperCase("Codeup")         // "CODEUP"
         upperCase("javascript")     // "JAVASCRIPT"
@@ -130,7 +130,7 @@
         upperCase()                 // false
 
 
-1. Write a function named `isPalindrome` that takes in a single input. If the input is not a string, then return `false`. If the input is a string, then return true if the string is the same forwards as it is backwards. Return false if the string is different forwards from backwards. Ignore capitalization.
+11. Write a function named `isPalindrome` that takes in a single input. If the input is not a string, then return `false`. If the input is a string, then return true if the string is the same forwards as it is backwards. Return false if the string is different forwards from backwards. Ignore capitalization.
         
         isPalindrome("Bob")         // true
         isPalindrome("radar")       // true
@@ -140,16 +140,16 @@
         isPalindrome(null)          // false
 
 
-1. Write a function named `getHighestNumber` that takes in 3 arguments. If all 3 inputs are numbers or numeric strings, then return the highest number. If any of the 3 inputs is missing or non-numeric, then return `false`.
+12. Write a function named `getHighestNumber` that takes in 3 arguments. If all 3 inputs are numbers or numeric strings, then return the highest number. If any of the 3 inputs is missing or non-numeric, then return `false`.
 
         getHighestNumber(1, 2, 3)       // 3
         getHighestNumber(0, 1, "2")     // 2
         getHighestNumber(9, 3, -20)     // 9
         getHighestNumber(1, 2, 'x')     // false
-        getHighestNumber(true, false)   // false
-        getHighestNumber(undefined)     // false
+        getHighestNumber("a", "b")      // false
+        getHighestNumber()              // false
 
-1. Write a function named `containsVowel` that takes in a single input as its argument. If the argument is not a string, then return `false`. If the argument is a string, then return true if the string contains any of the vowels 'a', 'e', 'i', 'o', or 'u' either uppercased or lowercased. Ignore 'y'. If the string does not contain any of these vowels, then return `false`. 
+13. Write a function named `containsVowel` that takes in a single input as its argument. If the argument is not a string, then return `false`. If the argument is a string, then return true if the string contains any of the vowels 'a', 'e', 'i', 'o', or 'u' either uppercased or lowercased. Ignore 'y'. If the string does not contain any of these vowels, then return `false`. 
     
         containsVowel("Index")      // true
         containsVowel("Codeup")     // true
@@ -158,7 +158,7 @@
         containsVowel("")           // false
         containsVowel(34)           // false
 
-10. Write a function named `add` that takes in two inputs. If both inputs provided are numeric, `add` will return the sum of both inputs. If one or both inputs is not numeric, `add` should return false.
+14. Write a function named `add` that takes in two inputs. If both inputs provided are numeric, `add` will return the sum of both inputs. If one or both inputs is not numeric, `add` should return false.
         
         add(1, 2)                   // 3
         add(0, 0)                   // 0
@@ -169,7 +169,7 @@
         add(null)                   // false
 
 
-11. Write a function named `multiply` that takes in two inputs. If both inputs provided are numeric, `multiply` returns the product of the first input multiplied by the second. If either or both inputs are not numeric, `multiply` should return false.
+15. Write a function named `multiply` that takes in two inputs. If both inputs provided are numeric, `multiply` returns the product of the first input multiplied by the second. If either or both inputs are not numeric, `multiply` should return false.
     
         multiply(4, 2)              // 8
         multiply(0, 44)             // 0
@@ -178,7 +178,7 @@
         multiply(true, false)       // false
         multiply("Monday")          // false
 
-12. Write a function named `sumOfSquares` that takes in two inputs. If both inputs are numeric, `sumOfSquares` should square each input and return the sum of them added together. For example, if we pass `a` and `b` then we should square `a` and add it to the square of `b`. If either or both inputs are not numeric, `sumOfSquares` should return false.
+16. Write a function named `sumOfSquares` that takes in two inputs. If both inputs are numeric, `sumOfSquares` should square each input and return the sum of them added together. For example, if we pass `a` and `b` then we should square `a` and add it to the square of `b`. If either or both inputs are not numeric, `sumOfSquares` should return false.
 
         sumOfSquares(2, 3)          // 13
         sumOfSquares(1, 0)          // 1
@@ -205,11 +205,11 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 - For a solution to be considered correct, all of the tests under that function's Spec List must be green.
 
-- There are 12 points available on this assessment. Each solution will be awarded 1 point if *all* the specs for that solution are green. 
+- There are 16 points available on this assessment. Each solution will be awarded 1 point if *all* the specs for that solution are green. 
 
-- If you complete all 12 problems and the tests show 0 failures, you will earn a 100% grade.
+- If you complete all 16 problems and the tests show 0 failures, you will earn a 100% grade.
 
-- If you write 12 solutions and the Spec List shows that one function has failing tests, you will receive 11 out of 12 points.
+- If you write 16 solutions and the Spec List shows that one function has failing tests, you will receive 15 out of 16 points.
 
 - If half of your functions have all green tests, and the only failing tests are for problems you did not attempt, you will earn a 50% grade.
 

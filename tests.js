@@ -1,20 +1,23 @@
 "use strict";
 
 /** 
- * Tests for the following functions 
- *   isBoolean
- *   isNumeric (string number or number)
- *   isNegative
- *   isPositive
- *   isString
- *   isArray
- *   isEven
- *   isOdd
- *   increment(number) should return false if input aint a number
- *   decrement(number) should return false if input aint a number
- *   square(n)
- *   add(a, b)
- *   sumOfSquares(a, b)
+ * Tests for the following functions. See README.md for more detail.
+ * isBoolean
+ * isNumeric
+ * isNegative
+ * isPositive
+ * square
+ * add
+ * multiply
+ * sumOfSquares
+ * isString
+ * isArray
+ * increment
+ * decrement
+ * isPalindrome
+ * upperCase
+ * getHighestNumber(a, b, c)
+ * containsVowel(input)
  */
 
 const randomPositiveNumber = Math.ceil(Math.random() * 100);
@@ -417,19 +420,121 @@ describe('square', function() {
 });
 
 describe('upperCase', function() {
-
+    it('should be a defined function', function() {
+       expect(typeof upperCase).toBe('function');
+    });
+    it("should return 'CODEUP' when passed the string 'Codeup'.", function() {
+        expect(upperCase('Codeup')).toBe('CODEUP');
+    });
+    it("should return 'JAVASCRIPT' when passed the string 'JavaScript'.", function() {
+        expect(upperCase('JavaScript')).toBe("JAVASCRIPT");
+    });
+    it("should return '' when passed the empty string ''.", function() {
+        expect(upperCase("")).toBe("");
+    });
+    it("should return 'BOB' when passed the string 'BOB'.", function() {
+       expect(upperCase("BOB")).toBe("BOB");
+    });
+    it("should return false when passed '45'.", function() {
+        expect(upperCase('45')).toBe(false);
+    });
+    it('should return false when passed null', function() {
+        expect(upperCase(null)).toBe(false);
+    });
+    it('should return false when called with no arguments', function() {
+        expect(upperCase()).toBe(false);
+    });
+    it('should return false when passed the array [1, 2, 3]', function() {
+        expect(upperCase([1, 2, 3])).toBe(false);
+    });
 });
 
 describe('isPalindrome', function() {
-
+    it('should be a defined function', function() {
+        expect(typeof isPalindrome).toBe('function');
+    });
+    it('should return true when passed the input "Bob".', function() {
+        expect(isPalindrome("Bob")).toBe(true);
+    });
+    it('should return true when passed the input "radar".', function() {
+        expect(isPalindrome('radar')).toBe(true);
+    });
+    it('should return true when passed the input "ufotofu"', function() {
+        expect(isPalindrome('ufotofu')).toBe(true);
+    });
+    it('should return true when passed an empty string "" as the input.', function() {
+        expect(isPalindrome("")).toBe(true);
+    });
+    it('should return false when passed the input "Monday"', function() {
+        expect(isPalindrome("Monday")).toBe(false);
+    });
+    it('should return false when passed the input ' + randomPositiveNumber, function() {
+        expect(isPalindrome(randomPositiveNumber)).toBe(false);
+    });
+    it('should return false when called with no arguments', function() {
+        expect(isPalindrome()).toBe(false);
+    });
+    it('should return false when passed the array [1, 2, 3]', function() {
+        expect(isPalindrome([1, 2, 3])).toBe(false);
+    });
 });
 
 describe('getHighestNumber', function() {
-
+    it('should be a defined function', function() {
+       expect(typeof getHighestNumber).toBe('function');
+    });
+    it('should return a number when called with 3 numbers like getHighestNumber(1, 2, 3)', function() {
+       expect(typeof getHighestNumber(1, 2, 3)).toBe('number');
+    });
+    it('should return 2 when passed the 3 arguments (0, 1, 2)', function() {
+        expect(getHighestNumber(0, 1, 2)).toBe(2);
+    });
+    it('should return 5 when passed the arguments (-10, 0, 5).', function() {
+        expect(getHighestNumber(0, -10, 5)).toBe(5);
+    });
+    it('should return false when passed the arguments (1, 2, "x") because not all arguments are numbers.', function() {
+        expect(getHighestNumber(1, 2, "x")).toBe(false);
+    });
+    it('should return false when passed the non-numeric arguments ("a", "b", "c")', function() {
+        expect(getHighestNumber("a", "b", "c")).toBe(false);
+    });
+    it('should return false when called with no provided arguments', function() {
+        expect(getHighestNumber()).toBe(false);
+    });
+    it('should return false when passed a single input made of an array', function() {
+        expect(getHighestNumber(exampleArray)).toBe(false);
+    })
 });
 
 describe('containsVowel', function() {
-
+    it('should be a defined function', function() {
+       expect(typeof containsVowel).toBe('function');
+    });
+    it('should return a boolean value no matter what inputs are passed.', function() {
+       expect(typeof containsVowel("Bob")).toBe('boolean');
+       expect(typeof containsVowel(45)).toBe('boolean');
+    });
+    it('should return true when passed the input "Bob"', function() {
+        expect(containsVowel("Bob")).toBe(true);
+    });
+    it('should return true when the input provided is "Codeup"', function() {
+        expect(containsVowel("Codeup")).toBe(true);
+    });
+    it('should return false when the provided input is the empty string ""', function() {
+        expect(containsVowel("")).toBe(false);
+    });
+    it('should return false when the input provided is "brb"', function() {
+        expect(containsVowel("brb")).toBe(false);
+    });
+    it('should return false when the provided input is a number like ' + randomPositiveNumber, function() {
+        expect(containsVowel(randomPositiveNumber)).toBe(false);
+    });
+    it('should return false when the input is an array', function() {
+        expect(containsVowel(exampleArray)).toBe(false);
+    });
+    it('should return false when called with no input', function() {
+        expect(containsVowel()).toBe(false);
+    });
 });
 
 
