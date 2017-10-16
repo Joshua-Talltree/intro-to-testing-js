@@ -220,88 +220,6 @@ describe('isString', function() {
     });
 });
 
-describe('isEven', function() {
-    it('isEven should be a defined function', function() {
-        expect(typeof isEven).toBe('function');
-    });
-    it('should return a boolean', function () {
-        expect(typeof isEven(3)).toBe('boolean');
-        expect(typeof isEven(2)).toBe('boolean');
-    });
-    it('should return true for 2', function() {
-        expect(isEven(2)).toBe(true);
-    });
-    it('should return true for 10', function() {
-        expect(isEven(10)).toBe(true);
-    });
-    it('should return false for 5', function() {
-        expect(isEven(5)).toBe(false);
-    });
-    it('should return false for 3', function() {
-        expect(isEven(3)).toBe(false);
-    });
-    it('should return false for an array', function() {
-        expect(isEven(exampleArray)).toBe(false);
-    });
-    it('should return false when provided a non-numeric string', function() {
-        expect(isEven(exampleString)).toBe(false);
-    });
-    it('should return false when the provided input is an object', function() {
-        expect(isEven(exampleObject)).toBe(false);
-    });
-    it('should return false when passed null as the input', function() {
-        expect(isEven(null)).toBe(false);
-    });
-    it('should return false when called without providing an input', function() {
-        expect(isEven()).toBe(false);
-    });
-});
-
-describe('isOdd', function() {
-    it('it should be a defined function', function() {
-        expect(typeof isOdd).toBe('function');
-    });
-    it('it should return a boolean value', function() {
-        expect(typeof isOdd(2)).toBe('boolean');
-    });
-    it('it should return true for 3', function() {
-        expect(isOdd(3)).toBe(true);
-    });
-    it('it should return true for 5', function() {
-        expect(isOdd(5)).toBe(true);
-    });
-    it('it should return true when passed "7"', function() {
-        expect(isOdd(7)).toBe(true);
-    });
-    it('it should return false for 2', function() {
-        expect(isOdd(2)).toBe(false);
-    });
-    it('it should return false for 10', function() {
-        expect(isOdd(10)).toBe(false);
-    });
-    it('it should return false for 0', function() {
-        expect(isOdd(0)).toBe(false);
-    });
-    it('it should return false when passed an array', function() {
-        expect(isOdd(exampleArray)).toBe(false);
-    });
-    it('it should return false when passed a non-numeric string', function() {
-        expect(isOdd(exampleString)).toBe(false);
-    });
-    it('it should return false when passed an object', function() {
-        expect(isOdd(exampleObject)).toBe(false);
-    });
-    it('it should return false when passed a boolean', function() {
-        expect(isOdd(true)).toBe(false);
-    });
-    it('it should return false when passed null', function() {
-        expect(isOdd(null)).toBe(false);
-    });
-    it('it should return false when passed no arguments', function() {
-        expect(isOdd()).toBe(false);
-    });
-});
-
 describe('increment', function() {
     it('should be a defined function', function() {
         expect(typeof increment).toBe('function');
@@ -491,6 +409,12 @@ describe('getHighestNumber', function() {
     });
     it('should return 5 when passed the arguments (-10, 0, 5).', function() {
         expect(getHighestNumber(0, -10, 5)).toBe(5);
+    });
+    it('should return 2 when passed the arguments (2, 2, 2).', function() {
+        expect(getHighestNumber(2, 2, 2)).toBe(2);
+    });
+    it('should return 5 when passed the arguments (3, 5, 5).', function() {
+        expect(getHighestNumber(3, 5, 5)).toBe(5);
     });
     it('should return false when passed the arguments (1, 2, "x") because not all arguments are numbers.', function() {
         expect(getHighestNumber(1, 2, "x")).toBe(false);

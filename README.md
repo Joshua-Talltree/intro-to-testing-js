@@ -145,6 +145,8 @@
         getHighestNumber(1, 2, 3)       // 3
         getHighestNumber(0, 1, "2")     // 2
         getHighestNumber(9, 3, -20)     // 9
+        getHighestNumber(2, 2, 2)       // 2
+        getHighestNumber(2, 5, 5)       // 5
         getHighestNumber(1, 2, 'x')     // false
         getHighestNumber("a", "b")      // false
         getHighestNumber()              // false
