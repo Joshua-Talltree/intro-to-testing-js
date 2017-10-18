@@ -226,17 +226,9 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 - Your grade is entirely dependent on the results of the automated tests. No credit will be given for partial or incorrect solutions. Accuracy and precision matter.
 
-- For a solution to be considered correct, all of the tests under that function's Spec List must be green.
+- There are 16 exercise problems. Each problem has a number of assertions for a total of 175. 
 
-- There are 16 points available on this assessment. Each solution will be awarded 1 point if *all* the specs for that solution are green. 
-
-- If you complete all 16 problems and the tests show 0 failures, you will earn a 100% grade.
-
-- If you write 16 solutions and the Spec List shows that one function has failing tests, you will receive 15 out of 16 points.
-
-- If half of your functions have all green tests, and the only failing tests are for problems you did not attempt, you will earn a 50% grade.
-
-- If all the tests fail for all of your solutions, you will earn a 0% grade.
+- You will be graded as a percentage of the number of spec tests you turn green out of 175.
 
 ## Hints
 
