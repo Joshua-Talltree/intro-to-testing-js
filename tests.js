@@ -565,6 +565,51 @@ describe('add', function() {
     });
 });
 
+describe('multiply', function() {
+    it('should be a defined function', function() {
+        expect(typeof multiply).toBe('function');
+    });
+    it('should return a number when passed two numbers', function() {
+        expect(typeof (multiply(1, 2))).toBe('number');
+    });
+    it('should return 15 when passed 5 and 3', function() {
+        expect(multiply(5, 3)).toBe(15);
+    });
+    it('should return ' + (randomPositiveNumber * 2) + ' when passed ' + randomPositiveNumber + ' and 2', function() {
+        expect(multiply(randomPositiveNumber, 2)).toBe(randomPositiveNumber * 2);
+    });
+    it('should return 6 when passed the numeric strings "2" and "3".', function() {
+        expect(multiply("2", "3")).toBe(6);
+    });
+    it('should return false when passed one numeric input and one non-number input', function() {
+        expect(multiply("Bob", 2)).toBe(false);
+    });
+    it('should return false when passed null', function() {
+        expect(multiply(null)).toBe(false);
+    });
+    it('should return false when passed non-numeric strings', function() {
+        expect(multiply("Bob", "Jane")).toBe(false);
+    });
+    it('should return false when passed two true boolean arguments', function() {
+        expect(multiply(true, true)).toBe(false);
+    });
+    it('should return false when passed two false boolean arguments', function() {
+        expect(multiply(false, false)).toBe(false);
+    });
+    it('should return false when passed a true and a false argument', function() {
+    expect(multiply(true, false)).toBe(false);
+    });
+    it('should return false when passed an array', function() {
+        expect(multiply(exampleArray)).toBe(false);
+    });
+    it('should return false when passed an object', function() {
+        expect(multiply(exampleObject)).toBe(false);
+    });
+    it('should return false when called with no arguments', function() {
+        expect(multiply()).toBe(false);
+    });
+});
+
 describe('sumOfSquares', function() {
     it('should return false when passed null', function() {
         expect(typeof sumOfSquares).toBe('function');
