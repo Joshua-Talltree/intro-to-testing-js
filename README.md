@@ -226,9 +226,9 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 - Your grade is entirely dependent on the results of the automated tests. No credit will be given for partial or incorrect solutions. Accuracy and precision matter.
 
-- There are 16 exercise problems. Each problem has a number of assertions for a total of 175. 
+- There are multiple assertions for each question. Each solution will be provided a number of known inputs and expected ouputs. This is to make sure that the solution will operate accurately under different conditions. 
 
-- You will be graded as a percentage of the number of spec tests you turn green out of 175.
+- You will be graded as a percentage of the number of spec tests you turn green. For example, if there are 189 specs and you have only 3 failing specs, then your grade will be (189 - 3) / 189 resulting a grade of 98%.
 
 ## Hints
 
