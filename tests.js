@@ -26,6 +26,8 @@ const randomNegativeNumber = Math.ceil(Math.random() * 100) * -1;
 const exampleObject = { "firstName": "Grace", "lastName": "Hopper"};
 const exampleArray = ['Grace Hopper', 'Ada Lovelace', 'Margaret Hamilton', 'Sandi Metz'];
 const exampleString = "Grace Hopper";
+const randomIndex = Math.floor(Math.random() * exampleArray.length);
+const randomString = exampleArray[randomIndex];
 
 describe("isBoolean", function() {
     it('should be a defined function', function() {
@@ -89,6 +91,15 @@ describe('isNumeric', function() {
     });
     it('should return true when passed a numeric string like "123" as input', function() {
         expect(isNumeric("123")).toBe(true);
+    });
+    it('should return true when passed a numeric string of "' + randomPositiveNumber + '"', function() {
+        expect(isNumeric(String(randomPositiveNumber))).toBe(true);
+    });
+    it('should return true when passed a numeric string of "' + randomNegativeNumber + '"', function() {
+        expect(isNumeric(String(randomNegativeNumber))).toBe(true);
+    });
+    it('should return true when passed Infinity, since infinity is numeric.', function() {
+        expect(isNumeric(Infinity)).toBe(true);
     });
     it('should return false when passed the boolean ' + randomBoolean, function() {
        expect(isNumeric(randomBoolean)).toBe(false);
@@ -219,6 +230,15 @@ describe('isString', function() {
     it('should return true when the input passed is the numeric string "123".', function() {
         expect(isString("123")).toBe(true);
     });
+    it('should return true when the input is the numeric string "' + randomPositiveNumber + '".', function() {
+        expect(isString(String(randomPositiveNumber))).toBe(true);
+    });
+    it('should return true when the input is the numeric string "' + randomNegativeNumber + '".', function() {
+        expect(isString(String(randomNegativeNumber))).toBe(true);
+    });
+    it('should return true when passed the string "' + randomString + '".', function() {
+        expect(isString(randomString)).toBe(true);
+    });
     it('should return false when passed no input', function() {
         expect(isString()).toBe(false);
     });
@@ -255,6 +275,9 @@ describe('isArray', function() {
     it('should return true when passed an array of strings', function() {
         expect(isArray(exampleArray)).toBe(true);
     });
+    it('should return true when passed an array of numbers', function() {
+        expect(isArray([randomPositiveNumber, randomNegativeNumber])).toBe(true);
+    });
     it('should return false when passed an object', function() {
         expect(isArray(exampleObject)).toBe(false);
     });
@@ -290,6 +313,9 @@ describe('increment', function() {
     });
     it('should return ' + (1 + randomPositiveNumber) + ' when passed ' + randomPositiveNumber, function() {
         expect(increment(randomPositiveNumber)).toBe(randomPositiveNumber + 1);
+    });
+    it('should return ' + (1 + randomNegativeNumber) + ' when passed ' + randomNegativeNumber, function() {
+        expect(increment(randomNegativeNumber)).toBe(randomNegativeNumber + 1);
     });
     it('should return false when passed null', function() {
         expect(increment(null)).toBe(false);
@@ -471,6 +497,9 @@ describe('getHighestNumber', function() {
     it('should return 5 when passed the arguments (3, 5, 5).', function() {
         expect(getHighestNumber(3, 5, 5)).toBe(5);
     });
+    it(`should return ${randomPositiveNumber} when passed ${randomPositiveNumber}, 0, and ${randomNegativeNumber}`, function() {
+        expect(getHighestNumber(randomNegativeNumber, 0, randomPositiveNumber)).toBe(randomPositiveNumber);
+    });
     it('should return false when passed the arguments (1, 2, "x") because not all arguments are numbers.', function() {
         expect(getHighestNumber(1, 2, "x")).toBe(false);
     });
@@ -499,8 +528,14 @@ describe('containsVowel', function() {
     it('should return true when passed the input "Bob"', function() {
         expect(containsVowel("Bob")).toBe(true);
     });
+    it('should return true when passed the input "Jane"', function() {
+        expect(containsVowel("Jane")).toBe(true);
+    });
     it('should return true when the input provided is "Codeup"', function() {
         expect(containsVowel("Codeup")).toBe(true);
+    });
+    it('should return true when passed ' + randomString, function() {
+        expect(containsVowel(randomString)).toBe(true);
     });
     it('should return false when the provided input is the empty string ""', function() {
         expect(containsVowel("")).toBe(false);
@@ -532,6 +567,9 @@ describe('add', function() {
     });
     it('should return ' + (randomPositiveNumber + 2) + ' when passed ' + randomPositiveNumber + ' and 2', function() {
         expect(add(randomPositiveNumber, 2)).toBe(randomPositiveNumber + 2);
+    });
+    it('should return ' + (randomNegativeNumber + randomPositiveNumber) + ' when passed ' + randomPositiveNumber + ' and ' + randomNegativeNumber, function(){
+        expect(add(randomPositiveNumber, randomNegativeNumber)).toBe(randomPositiveNumber + randomNegativeNumber);
     });
     it('should return 5 when passed the numeric strings "2" and "3".', function() {
         expect(add("2", "3")).toBe(5);
@@ -575,8 +613,14 @@ describe('multiply', function() {
     it('should return 15 when passed 5 and 3', function() {
         expect(multiply(5, 3)).toBe(15);
     });
+    it('should return ' + (randomPositiveNumber * 99) + ' when passed ' + randomPositiveNumber + ' and 99', function() {
+        expect(multiply(randomPositiveNumber, 99)).toBe(randomPositiveNumber * 99);
+    });
     it('should return ' + (randomPositiveNumber * 2) + ' when passed ' + randomPositiveNumber + ' and 2', function() {
         expect(multiply(randomPositiveNumber, 2)).toBe(randomPositiveNumber * 2);
+    });
+    it('should return ' + (randomPositiveNumber * randomNegativeNumber) + ' when passed ' + randomPositiveNumber + ' and ' + randomNegativeNumber, function() {
+        expect(multiply(randomPositiveNumber, randomNegativeNumber)).toBe(randomPositiveNumber * randomNegativeNumber);
     });
     it('should return 6 when passed the numeric strings "2" and "3".', function() {
         expect(multiply("2", "3")).toBe(6);

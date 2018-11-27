@@ -224,11 +224,13 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 ## How solutions will be graded
 
-- Your grade is entirely dependent on the results of the automated tests. No credit will be given for partial or incorrect solutions. Accuracy and precision matter.
+- Your grade is entirely dependent on the results of the automated tests. No credit will be given for code that cannot run due to typos or syntax errors.
 
-- There are multiple assertions for each question. Each solution will be provided a number of known inputs and expected ouputs. This is to make sure that the solution will operate accurately under different conditions. 
+- There are multiple spec tests for each question. Each solution will be provided a number of known inputs and expected ouputs. This is to make sure that the solution will operate accurately under different conditions. 
 
-- You will be graded as a percentage of the number of spec tests you turn green. For example, if there are 189 specs and you have only 3 failing specs, then your grade will be (189 - 3) / 189 resulting a grade of 98%.
+- You will be graded as a percentage of the number of spec tests you turn green. For example, if there are 203 specs and you have 16 failing specs, then your grade will be (203 - 16) / 203 resulting a grade of 92%.
+
+- If 0 spec tests turn green, then your grade is a 0%.
 
 ## Hints
 
