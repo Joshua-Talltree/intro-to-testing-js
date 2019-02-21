@@ -383,7 +383,7 @@ describe('square', function() {
     it('should return 4 when passed 2', function() {
         expect(square(2)).toBe(4);
     });
-    it('should return .5 when passed .25', function() {
+    it('should return .25 when passed .5', function() {
         expect(square(.5)).toBe(.25);
     });
     it('should return ' + (randomPositiveNumber * randomPositiveNumber) + ' when passed ' + randomPositiveNumber, function() {
