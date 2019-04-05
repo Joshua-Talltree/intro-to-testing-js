@@ -49,6 +49,9 @@ describe("isBoolean", function() {
     it('should return false when passed the number ' + randomPositiveNumber, function() {
        expect(isBoolean(randomPositiveNumber)).toBe(false);
     });
+    it('should return false when passed the number ' + randomNegativeNumber, function() {
+       expect(isBoolean(randomNegativeNumber)).toBe(false);
+    });
     it('should return false when passed the number 0', function() {
         expect(isBoolean(0)).toBe(false);
     });
@@ -63,6 +66,9 @@ describe("isBoolean", function() {
     });
     it('should return false when passed a string', function() {
         expect(isBoolean(exampleString)).toBe(false);
+    });
+    it('should return false when passed a string', function() {
+        expect(isBoolean(randomString)).toBe(false);
     });
     it('should return false when passed an object', function() {
         expect(isBoolean(exampleObject)).toBe(false);
@@ -167,6 +173,9 @@ describe('isNegative', function() {
     });
     it('should return false when passed the boolean ' + randomBoolean, function() {
        expect(isNegative(randomBoolean)).toBe(false);
+    });
+    it('should return false when passed a string', function() {
+        expect(isNegative(randomString)).toBe(false);
     });
 });
 
