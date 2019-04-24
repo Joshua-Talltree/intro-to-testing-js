@@ -19,7 +19,7 @@
 
 ## Instructions
 
-0. *Carefully* read all the instructions and problems before beginning your work.
+0. *Carefully* read *all* the instructions and problems before beginning your work.
 
 1. Clone this repository to your local projects directory. If you're using IntelliJ, go to File->New->Project From Version Control->GitHub and then paste the clone address of this repo. The clone address of the repo is found by clicking the green "Clone or download" button on the repo's page.
 
@@ -40,7 +40,7 @@
         isBoolean(0)                // false
         isBoolean(null)             // false
         isBoolean("")               // false
-        isBoolean("Bob")            // false
+        isBoolean("kwiw")           // false
         isBoolean([1, 2])           // false
 
 2. Define a function named `isNumeric` that takes in a value and returns true if the input is numeric or not. Numeric strings are numeric and should return true.
@@ -224,19 +224,25 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 ## How solutions will be graded
 
-- Your grade is entirely dependent on the results of the automated tests. No credit will be given for code that cannot run due to typos or syntax errors.
+- Your grade is entirely dependent on the completeness of your solutions. No credit will be given for code that cannot run due to typos or syntax errors. 
 
 - There are multiple spec tests for each question. Each solution will be provided a number of known inputs and expected ouputs. This is to make sure that the solution will operate accurately under different conditions. 
 
-- You will be graded as a percentage of the number of spec tests you turn green. For example, if there are 203 specs and you have 16 failing specs, then your grade will be (203 - 16) / 203 resulting a grade of 92%.
+- All the specs for a given unit test need to be green for the solution to earn credit. For example, all of the specs for the `isBoolean` unit must be green for the solution to count towards the grade.
 
-- If 0 spec tests turn green, then your grade is a 0%.
+- If all the specs for all the units are green, then a grade of 100% is earned.
+
+- If all the specs are green for 9 of the functions under test and one unit test has red specs, then the grade is 9/10 or a 90%.
+
+- If there are red, failing specs in each of the unit tests for all the functions, then the grade is a 0. This is because each funciton solution needs to be whole and complete. 
 
 ## Hints
+- If you have green tests and notice that everything is now completely red, it means you likely have a syntax error or a type error in your code. Those kinds of errors will keep all the code from executing properly.
+- If you have a syntax error, type error, or reference error in a particular solution function, and it's time to commit and push your work, then comment out that function or the line of code with the error so that your other solutions will be appropriately graded.
 
-Consider this example problem.
+- Consider this problem: 
 
-> Write a function called `isBoolean` that takes in a value and returns a boolean if the argument provided is a boolean value or not.
+> Write a function called `isBoolean` that takes in a value and returns `true` or `false` if the argument provided is a boolean data-type or not.
 >
 > `isBoolean("Dog")` should return `false` because a string is not a boolean
 >
