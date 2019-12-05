@@ -1,6 +1,6 @@
-# JavaScript Basics I & I Assessment Delivery Guide
+# JavaScript Basics I & II Assessment Delivery Guide
 
-This assessment has been split into two 
+This assessment repo has been split into two parts, use this guide to prepare and help to set the expectations before taking the assessment. Feel free to check solutions for any assessment review.
 
 ## Core competencies assessed for both parts
 
@@ -11,7 +11,7 @@ This assessment has been split into two
     - Creating your own branch
     - Committing and pushing work to a new branch on GitHub
 
-### JS Basics I [link](https://github.com/gocodeup/js-basics-assessment/tree/basics-i)
+### JS Basics I [(Link)](https://github.com/gocodeup/js-basics-assessment/tree/basics-i)
 
 - Programing fundamentals in JavaScript:
     - Working with values, variables, and data types
@@ -19,7 +19,7 @@ This assessment has been split into two
     - Working with JS internal functions to make decisions and perform actions.
     - Writing functions that take in inputs, process, and return outputs.
 
-### JS Basics II [link](https://github.com/gocodeup/js-basics-assessment/tree/basics-ii)
+### JS Basics II [(Link)](https://github.com/gocodeup/js-basics-assessment/tree/basics-ii)
 
 - Same programing fundamentals in JavaScript as the previous assessment plus:
     - Using conditional logic to make decisions inside functions
