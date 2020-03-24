@@ -8,62 +8,36 @@
  * here. If you do, the automated tests will not be able to see your functions.
  */
 
-function isBoolean(param){
+function isBoolean( param ){
     return typeof param === 'boolean';
 }
 
-function isString(param){
+function isString( param ){
     return typeof param === 'string';
 }
 
-function isNotString(param){
+function isNotString( param ){
     return !isString(param);
 }
-
-function isEmptyString(param){
-    return param !== undefined && param.length === 0;
+function isEmptyString( param ){
+    return param != null && param.length === 0;
 }
-
-function isNegative(param){
+function isNotANumber( param ){
+    return typeof param !== 'number';
+}
+function isNegative( param ){
     return param < 0;
 }
-
-function isPositive(param){
-    return param > 0 && !isBoolean(param);
+function isPositive( param ){
+    return param > 0;
 }
-
-function isArray(param){
+function isZero( param ){
+    return param == 0;
+}
+function isArray( param ){
     return Array.isArray(param);
 }
 
-function isZero(param){
-    return param == '0' && !isBoolean(param);
-}
-
-
-function upperCase(param){
-    if(isNaN(param) && isString(param)){
-        return param.toUpperCase();
-    }else if (param === ''){
-        return '';
-    }else {
-        return false;
-    }
-}
-
-function containsVowel(param){
-
-    if(!isString(param)){
-        return false;
-    }
-
-    var counter = 0;
-    var arrayParam = param.toLowerCase().split('');
-    var vowels = ['a','e','i','o','u'];
-    arrayParam.forEach( function (char) {
-        if(vowels.includes(char)){
-            counter++;
-        }
-    });
-    return counter > 0;
+function upperCase( param ){
+    return isString(param) && param.toUpperCase();
 }
