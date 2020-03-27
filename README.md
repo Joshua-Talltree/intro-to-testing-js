@@ -21,4 +21,4 @@ Use this guide to prepare and help to set the expectations before taking the ass
     
 ## Solutions
 
-Proposed instructor [solutions](solution-basics-1.js) can be found in this branch, but feel free to do add or use your own solutions during the assessment review.
+Proposed instructor [solutions](instructor-solutions.js) can be found in this branch, but feel free to do add or use your own solutions during the assessment review.
