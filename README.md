@@ -2,6 +2,10 @@
 
 Use this guide to prepare and help to set the expectations before taking the assessment. Feel free to check solutions for any assessment review.
 
+## Duration
+
+The suggested time for this assessment is *1.5 hours* 
+
 ## Core competencies assessed
 
 - Reading and following directions
