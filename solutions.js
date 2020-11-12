@@ -52,49 +52,53 @@ function isEqualNumber(num1, num2) {
 // * isEqual
 
 function isEqual(num1, num2) {
-    if (num1 == num2) {
-        return true;
-    } else {
-        return false;
-    }
+    return num1 === num2;
 }
 
 // * isNot
 
-function isNot(num1, num2) {
-    if (!num1 && !num2 ) {
-        return true;
-    } else {
-        return false;
-    }
+function isNot(num) {
+    return (typeof num !== "boolean") ? false : !num;
 }
 
-// * calcAbs
-
-function calcAbs(num1) {
-    if (num1 === num1 && null){
-        return true;
-    }
-}
+// function isNot(num) {
+//     return (typeof num !== "boolean") ? false : input;
+//
+// // * calcAbs
+//
+//     function calcAbs(num1) {
+//         if (num1 === num1 && null) {
+//             return true;
+//         }
+//     }
 
 
 // * calcCube
 
-function calcCube(num1) {
-    if (num1 === null || NaN) {
-        return 0;
-    }
-}
+    // function calcCube(num1) {
+    //     if (num1 === null || NaN) {
+    //         return 0;
+    //     }
+    // }
 
 // * isTypeMatch
+//
+//     function isMatchType(num1, num2) {
+//         if (num1 === num2)
+//             return true;
+//     } else {
+//         if (num1 !== num2)
+//             return null;
+//     }
+//
+// }
 
-function isMatchType(num1, num2) {
-    if (num1 === num2) {
-        return true;
-    } else if (num1 === !num2) {
-        return null;
-    }
-}
 
+// * findLongestString
+
+
+
+
+// * isFactor
 
 
